@@ -1,0 +1,45 @@
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    color: #292b2c;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+a, .link-button {
+    color: #0275d8;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.mini {
+    font-size: 13.3px;
+}
+
+.no-spin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+    -moz-appearance: textfield !important;
+}
+
+.no-select {
+    user-select: none;
+}
+
+.after-clear:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.right-actions {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+    .right-actions > .action {
+        padding: 8px;
+    }

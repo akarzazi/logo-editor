@@ -1,0 +1,64 @@
+.knob {
+    position: relative;
+    width: 170px;
+    height: 170px;
+}
+
+    .knob .knob-drag {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        cursor: -webkit-grab;
+        cursor: grab;
+        user-select: none;
+    }
+
+        .knob .knob-drag:after {
+            position: absolute;
+            width: 1px;
+            height: 32px;
+            top: 0;
+            left: 50%;
+            content: '';
+            background: #dce5ea;
+        }
+
+    .knob .knob-input-area {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: white;
+        border-radius: 100%;
+        box-shadow: 3px 7px 9px #ccc inset;
+    }
+
+        .knob .knob-input-area input {
+            position: absolute;
+            -webkit-appearance: none;
+            top: 50%;
+            left: 50%;
+            z-index: 10;
+            width: 100px;
+            height: 100px;
+            margin: -50px 0 0 -50px;
+            padding: 0;
+            color: #999;
+            font-size: 32px;
+            text-align: center;
+            background: none;
+            border: 0;
+            border-radius: 50%;
+            outline: none;
+            transition: color 0.25s ease-in;
+        }
+
+            .knob .knob-input-area input:focus {
+                color: #333;
+                transition: color 0.25s ease-out;
+            }
