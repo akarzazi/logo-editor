@@ -68,23 +68,10 @@ _.paramsToJson = function (search) {
     for (i in pairs) {
         var split = pairs[i].split('=');
         var attempted = decodeURIComponent(split[1]);
-        obj[decodeURIComponent(split[0])] = isNaN(+attempted) ? attempted : +attempted;
+        obj[decodeURIComponent(split[0])] = isNaN(+attempted) || attempted == "" ? attempted : +attempted;
     }
     return obj;
 }
-_.isChrome = function () {
-    var isChromium = window.chrome,
-      winNav = window.navigator,
-      vendorName = winNav.vendor,
-      isOpera = winNav.userAgent.indexOf("OPR") > -1,
-      isIEedge = winNav.userAgent.indexOf("Edge") > -1,
-      isIOSChrome = winNav.userAgent.match("CriOS");
-
-    if (isIOSChrome) {
-        return true;
-    } else if (isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
-        return true;
-    } else {
-        return false;
-    }
+_.isWebkit = function () {
+    return 'WebkitAppearance' in document.documentElement.style && !/Edge/.test(navigator.userAgent);
 }
